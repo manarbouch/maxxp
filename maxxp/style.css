@@ -1,27 +1,57 @@
 /* General Styles */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    font-family: Arial, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    /* Prevents horizontal scrolling */
+    background-color: #f4f4f4;
 }
 
 /* Navbar */
 .navbar {
-    position: absolute; /* Allows image underneath */
+    position: absolute;
+    /* Allows image underneath */
     width: 100%;
-    box-sizing: border-box; /* Prevents extra spacing issues */
+    box-sizing: border-box;
+    /* Prevents extra spacing issues */
     top: 0;
     left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 50px;
-    background: rgba(0, 0, 0, 0.2); /* Light transparency */
-    backdrop-filter: blur(5px); /* Glass effect */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Subtle contrast */
-    z-index: 10; /* Keeps it above content */
+    background: rgba(0, 0, 0, 0.2);
+    /* Light transparency */
+    backdrop-filter: blur(5px);
+    /* Glass effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    /* Subtle contrast */
+    z-index: 10;
+    /* Keeps it above content */
+}
+
+/* Profile Icon */
+.profile-icon {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
 }
 
 /* Logo */
@@ -38,7 +68,8 @@ body {
 
 .navbar ul li a {
     text-decoration: none;
-    color: rgb(103, 117, 225); /* Ensures visibility */
+    color: rgb(103, 117, 225);
+    /* Ensures visibility */
     font-weight: bold;
     font-size: 16px;
 }
@@ -47,7 +78,8 @@ body {
 .search-box {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.2); /* Light transparency */
+    background: rgba(255, 255, 255, 0.2);
+    /* Light transparency */
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -57,7 +89,8 @@ body {
     background: transparent;
     outline: none;
     padding: 5px;
-    color: white; /* Ensures readability */
+    color: white;
+    /* Ensures readability */
 }
 
 /* Hero Section */
@@ -171,4 +204,120 @@ footer {
 .social-icons i {
     font-size: 30px;
     margin-right: 10px;
+}
+
+/* Authentication Pages */
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+}
+
+/* Form Box */
+.form-box {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Authentication Logo */
+.form-box .logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin: 5px 0;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Captcha Box */
+.captcha-box {
+    display: flex;
+    align-items: center;
+}
+
+.captcha-box img {
+    margin-left: 10px;
+    height: 40px;
+}
+
+/* Remember Me */
+.remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #0056b3;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #004494;
+}
+
+/* Links */
+p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+p a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Password Reset Link */
+.password-options {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.password-options a {
+    font-size: 14px;
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.password-options a:hover {
+    text-decoration: underline;
 }
