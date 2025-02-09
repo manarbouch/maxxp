@@ -17,7 +17,7 @@
                 <ul>
                     <li><a href="#">HOME</a></li>
                     <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
                 </ul>
             </nav>
             <div class="search-box">
@@ -34,18 +34,21 @@
         <div class="hero-content">
             <a href="join.html" class="btn signup">Sign up</a>
             <a href="login.html" class="btn login">Login</a>
+            
         </div>
     </section>
 
     <!-- Contact Form -->
-    <section class="contact">
-        <h2>CONTACT US</h2>
-        <form>
-            <input type="email" placeholder="Enter your email">
-            <input type="email" placeholder="Enter your email">
-            <textarea placeholder="Enter your email"></textarea>
-        </form>
-    </section>
+        <section class="contact">
+            <h2>CONTACT US</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Enter your full name" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <textarea name="message" placeholder="message" required></textarea>
+                <button type ="submit">Send you Message</button>
+            </form>
+            <p id="Response-message"></p>
+        </section>
 
     <!-- Footer -->
     <footer>
@@ -64,7 +67,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
 
