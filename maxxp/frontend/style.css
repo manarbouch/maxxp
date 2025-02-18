@@ -15,10 +15,8 @@ body {
 /* Navbar */
 .navbar {
     position: absolute;
-    /* Allows image underneath */
     width: 100%;
     box-sizing: border-box;
-    /* Prevents extra spacing issues */
     top: 0;
     left: 0;
     display: flex;
@@ -26,20 +24,16 @@ body {
     justify-content: space-between;
     padding: 15px 50px;
     background: rgba(0, 0, 0, 0.2);
-    /* Light transparency */
     backdrop-filter: blur(5px);
-    /* Glass effect */
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    /* Subtle contrast */
     z-index: 10;
-    /* Keeps it above content */
 }
 
 /* Profile Icon */
 .profile-icon {
-    position: absolute; /* Absolute positioning */
-    top: 15px; /* Adjust top position */
-    right: 15px; /* Adjust right position */
+    position: absolute;
+    top: 15px;
+    right: 15px;
     display: flex;
     align-items: center;
 }
@@ -50,13 +44,12 @@ body {
 }
 
 .profile-icon img {
-    width: 150px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid white;
 }
-
 
 /* Logo */
 .logo {
@@ -73,7 +66,6 @@ body {
 .navbar ul li a {
     text-decoration: none;
     color: rgb(103, 117, 225);
-    /* Ensures visibility */
     font-weight: bold;
     font-size: 16px;
 }
@@ -83,7 +75,6 @@ body {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.2);
-    /* Light transparency */
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -94,7 +85,6 @@ body {
     outline: none;
     padding: 5px;
     color: white;
-    /* Ensures readability */
 }
 
 /* Hero Section */
@@ -136,7 +126,6 @@ body {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    
 }
 
 .signup {
@@ -148,7 +137,7 @@ body {
 
 .login {
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px);
     color: white;
     margin-left: 0px;
     border-radius: 0 20px 20px 0;
@@ -217,22 +206,23 @@ footer {
 /* Authentication Pages */
 .container {
     width: 100%;
-    max-width: 400px;
+    max-width: 600px; /* Increased width */
     margin: 100px auto;
 }
 
 /* Form Box */
 .form-box {
     background: white;
-    padding: 30px;
+    padding: 40px; /* Increased padding */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    font-size: 18px; /* Larger text */
 }
 
 /* Authentication Logo */
 .form-box .logo {
-    width: 150px;
+    width: 180px; /* Slightly larger logo */
     margin-bottom: 10px;
 }
 
@@ -247,17 +237,18 @@ form {
 
 label {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     margin: 5px 0;
     color: #333;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* More padding */
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px; /* Bigger input text */
 }
 
 /* Captcha Box */
@@ -275,20 +266,22 @@ input {
 .remember-me {
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 16px;
+    margin-bottom: 15px;
 }
 
 .remember-me input {
-    margin-right: 5px;
+    margin-right: 50px; 
+    transform: scale(1.9); 
 }
 
 /* Buttons */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background: #0056b3;
     color: white;
-    font-size: 16px;
+    font-size: 18px; /* Bigger button text */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -302,7 +295,7 @@ button:hover {
 /* Links */
 p {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 p a {
@@ -321,7 +314,7 @@ p a:hover {
 }
 
 .password-options a {
-    font-size: 14px;
+    font-size: 16px;
     color: #0056b3;
     text-decoration: none;
 }
