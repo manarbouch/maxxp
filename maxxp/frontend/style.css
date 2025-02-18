@@ -30,6 +30,9 @@ body {
 
 /* Profile Icon */
 .profile-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
     display: flex;
     align-items: center;
 }
@@ -40,8 +43,8 @@ body {
 }
 
 .profile-icon img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid white;
@@ -178,166 +181,17 @@ body {
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
-    display: inline-block; /* Ensure transform works */
-    transition: all 0.3s ease-in-out;
 }
 
 .signup {
     background: orange;
     color: white;
-    border-radius: 20px 0px 0px 20px;
-}
-
-.signup:hover {
-    background: darkorange;
-    transform: scale(1.1); /* Increased scaling */
 }
 
 .login {
-    background: rgba(49, 95, 222, 0.3);
-    backdrop-filter: blur(10px);
-    color: white;
-    margin-left: 0px;
-    border-radius: 0px 20px 20px 0px;
-}
-
-.login:hover {
-    background: #2b56e1;
-    transform: scale(1.1); /* Increased scaling */
-}
- 
-
-button.prev, button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 32px;
-    z-index: 20;
-    outline: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px; /* Ensure a fixed size */
-    height: 50px;
-}
-
-button.prev { left: 10px; }
-button.next { right: 10px; }
-
-button.prev:hover, button.next:hover {
-    color: orange;
-}
-
-button.prev:focus, button.next:focus {
-    outline: none;
-}
-
-
-
-
-
-
-/* Energy Call to Action Section */
-.energy-action {
-    background: linear-gradient(to right, #2ecc71, #27ae60); /* Green gradient background */
-    padding: 60px 30px;
-    text-align: center;
-    color: white;
-    margin-top: 50px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.energy-action h2 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #0056b3;
-}
-
-.energy-action p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #000000;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-}
-
-.energy-action ul {
-    list-style: none;
-    margin-bottom: 30px;
-    padding: 0;
-    text-align: left;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.energy-action ul li {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.energy-action a.btn.get-started {
-    display: inline-block;
-    padding: 15px 40px;
-    background: #ff8c00;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 30px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-}
-
-.energy-action a.btn.get-started:hover {
-    background: #e67e22;
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-.energy-call .btn {
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.energy-call .learn-more {
-    background: white;
-    color: #ff8c00;
-    border: 2px solid #ff8c00;
-}
-
-.energy-call .learn-more:hover {
-    background: #ff8c00;
-    color: white;
-}
-
-.energy-call .join-now {
     background: black;
     color: white;
-}
-
-.energy-call .join-now:hover {
-    background: white;
-    color: black;
-    border: 2px solid black;
+    margin-left: 10px;
 }
 
 /* Contact Section */
@@ -403,22 +257,23 @@ footer {
 /* Authentication Pages */
 .container {
     width: 100%;
-    max-width: 400px;
+    max-width: 600px; /* Increased width */
     margin: 100px auto;
 }
 
 /* Form Box */
 .form-box {
     background: white;
-    padding: 30px;
+    padding: 40px; /* Increased padding */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    font-size: 18px; /* Larger text */
 }
 
 /* Authentication Logo */
 .form-box .logo {
-    width: 150px;
+    width: 180px; /* Slightly larger logo */
     margin-bottom: 10px;
 }
 
@@ -433,17 +288,18 @@ form {
 
 label {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     margin: 5px 0;
     color: #333;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* More padding */
     margin-bottom: 15px;
     border: 1px solid #e9822e;
     border-radius: 5px;
+    font-size: 16px; /* Bigger input text */
 }
 
 /* Captcha Box */
@@ -461,20 +317,22 @@ input {
 .remember-me {
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 16px;
+    margin-bottom: 15px;
 }
 
 .remember-me input {
-    margin-right: 5px;
+    margin-right: 50px; 
+    transform: scale(1.9); 
 }
 
 /* Buttons */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background: #0056b3;
     color: white;
-    font-size: 16px;
+    font-size: 18px; /* Bigger button text */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -486,7 +344,7 @@ button {
 /* Links */
 p {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 p a {
@@ -505,7 +363,7 @@ p a:hover {
 }
 
 .password-options a {
-    font-size: 14px;
+    font-size: 16px;
     color: #0056b3;
     text-decoration: none;
 }
