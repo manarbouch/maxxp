@@ -224,34 +224,69 @@ body {
 
 /* Footer */
 footer {
-    background: transparent;
-    padding: 20px;
+    background: #f8f9fa; 
+    padding: 20px 0;
+    border-top: 3px solid #ccc;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
+    padding: 10px 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo img {
+    width: 120px;
+    height: auto;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .footer-links ul {
+    display: flex;
     list-style: none;
     padding: 0;
-}
-
-.footer-links h3 {
-    color: goldenrod;
+    margin: 0;
+    gap: 15px;
 }
 
 .footer-links ul li a {
     text-decoration: none;
     color: black;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: goldenrod;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .social-icons i {
-    font-size: 30px;
-    margin-right: 10px;
+    font-size: 28px;
+    color: #4a4a4a;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 
 /* Authentication Pages */
