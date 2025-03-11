@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Panels Infographics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #fbfbfb;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            transition: left 0.3s ease-in-out;
+            padding-top: 60px;
+            box-shadow: 2px 0 10px rgba(46, 94, 225, 0.2);
+        }
+
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            color: #0d63a5;
+            font-size: 20px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #0d63a5;
+        }
+
+        .sidebar .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 160px;
+            height: auto;
+        }
+
+        /* Button (>) to open the sidebar */
+        .open-btn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: #0d63a5;
+            color: white;
+            font-size: 20px;  /* Smaller font size */
+            padding: 10px;
+            border-radius: 50%; /* Make it round */
+            cursor: pointer;
+            z-index: 1001;
+            transition: left 0.3s ease-in-out;
+            width: 40px;  /* Smaller width */
+            height: 40px; /* Smaller height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #f39c12;
+        }
+
+        .infographic {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .infographic img {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 10px;
+        }
+
+        .fact {
+            background: #f9e79f;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Open Button (>) -->
+    <div class="open-btn" id="open-btn" onclick="toggleSidebar()">></div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <img src="images/logo.png" alt="Company Logo" class="logo">
+        <a href="profile.html">Update Profile</a>
+        <a href="dashpage2.html">Solar Panel Comparison</a>
+        <a href="dashpage3.html">Solar Energy Facts</a>
+        
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Solar Panels: A Sustainable Future</h1>
+        <div class="infographic">
+            <div class="fact">Solar energy is the most abundant energy source on Earth!</div>
+            <img src="images/solarpanel.jpg" alt="How Solar Panels Work">
+            <div class="fact">A single hour of sunlight provides enough energy to power the world for a year!</div>
+            <img src="images/growth.png" alt="Solar Energy Growth">
+            <div class="fact">Solar panels have dropped in cost by over 80% since 2010!</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const openBtn = document.getElementById("open-btn");
+
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+                openBtn.style.left = "15px"; // Move back when closed
+            } else {
+                sidebar.style.left = "0px";
+                openBtn.style.left = "210px"; // Moves inside when open
+            }
+        }
+    </script>
+
+</body>
+</html>
+

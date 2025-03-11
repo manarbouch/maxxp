@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxx Energy Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For charts -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            color: rgb(60, 96, 242);
+            height: 100vh;
+            position: fixed;
+            transition: transform 0.3s ease;
+            transform: translateX(0);
+            padding: 20px;
+        }
+
+        .sidebar.active {
+            transform: translateX(-250px); /* Hidden sidebar when inactive */
+        }
+
+        .sidebar .logo {
+            width: 100%;
+        }
+
+        .sidebar nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar nav ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar nav ul li a {
+            color: rgb(42, 75, 236);
+            text-decoration: none;
+        }
+
+        .open-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #ffffff;
+            color: rgb(61, 114, 237);
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.shifted {
+            margin-left: 0; /* Shift the main content when sidebar is hidden */
+        }
+
+        /* Weather and indicator section */
+        .weather-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .circle {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background-color: #3498db;
+            line-height: 150px;
+            color: white;
+            font-size: 22px;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: bold;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .circle-indicator {
+            position: relative;
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+            text-align: center;
+            background-color: #fafafa;
+            border-radius: 50%;
+            line-height: 150px;
+            color: white;
+            font-size: 18px; /* Adjusted font size */
+            font-weight: bold;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .circle-indicator:hover {
+            transform: scale(1.1);
+        }
+
+      .circle-indicator p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 14px; /* Adjusted for better fit */
+    font-weight: bold;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+
+        /* Tooltip */
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: -90px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff9f9;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px;
+            text-align: left;
+            font-size: 14px;
+            z-index: 10;
+        }
+
+        /* Tooltip visibility */
+        .circle-indicator:hover .tooltip {
+            display: block;
+        }
+
+        /* Tooltip arrow */
+        .tooltip::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #fafafa transparent transparent transparent;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: #eee;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #2ecc71;
+            text-align: center;
+            line-height: 10px;
+            color: white;
+        }
+
+        /* Center the circular indicators section */
+        .indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .info-card {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 10px auto;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Open Button (>) -->
+    <div class="open-btn" onclick="toggleSidebar()">&#10094;</div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <img src="images/logo.png" alt="Maxx Energy Logo" class="logo">
+
+        <nav>
+            <ul>
+                <li>Notifications</li>
+                <li><a href="profile.html">Update Profile</a></li>
+                <li><a href="dashpage2.html">Solar Panel Comparison</a></li>
+                <li><a href="dashpage3.html">Solar Energy Facts</a></li>
+                <li>Settings</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="top-nav">
+            <input type="text" id="searchBar" placeholder="Search Here">
+
+            <div class="profile-icon">
+                <img id="dashboard-profile-pic" src="userprofile.jpg" alt="Profile Picture" class="profile-img">
+            </div>
+        </header>
+
+        <!-- Dashboard Section -->
+        <div class="dashboard">
+          
+        </div>
+
+<script>
+
+    // Load profile data from localStorage when the dashboard loads
+    window.addEventListener("load", function () {
+        if (localStorage.getItem("profileImage")) {
+            document.getElementById("dashboard-profile-pic").src = localStorage.getItem("profileImage");
+        }
+        if (localStorage.getItem("profileName")) {
+            document.getElementById("dashboard-username").textContent = localStorage.getItem("profileName");
+        }
+        if (localStorage.getItem("profileBio")) {
+            document.getElementById("dashboard-bio").textContent = localStorage.getItem("profileBio");
+        }
+    });
+</script>
+
+
+       
+        <!-- Charts Section -->
+        <section class="charts">
+            <div class="chart-container">
+                <h3>Monthly & Yearly Trends</h3>
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="lineChart"></canvas>
+            </div>
+        </section>
+        <section class="weather-box">
+            <div class="circle" id="temperature">--</div>
+            <p id="weather-description">Fetching weather...</p>
+            <img id="weather-icon" src="" alt="" class="weather-icon">
+        </section>
+        
+
+ 
+
+
+<!-- Styles for Stakeholder Insights Section -->
+<style>
+    .stakeholder-insights {
+        margin-top: 40px;
+        padding: 50px 20px;
+        background: #fcf8f8;
+        color: rgb(56, 50, 50);
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .insights-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .stakeholder-insights h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .stakeholder-insights p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .insight-metrics {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .insight-box {
+        background: #3498db;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+        width: 200px;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .insight-box h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .insight-box p {
+        font-size: 22px;
+        font-weight: bold;
+    }
+</style>
+
+<!-- Styles for More Information Section -->
+<style>
+    .more-info {
+        margin-top: 40px;
+        padding: 50px 20px;
+        background: linear-gradient(to right, #3498db, #2c3e50);
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .more-info h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .more-info p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .info-links {
+        margin: 20px 0;
+    }
+
+    .info-btn {
+        display: inline-block;
+        padding: 12px 25px;
+        margin: 10px;
+        background: white;
+        color: #3498db;
+        font-weight: bold;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .info-btn:hover {
+        background: #f1c40f;
+        color: #2c3e50;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-link {
+        color: #f1c40f;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .contact-link:hover {
+        text-decoration: underline;
+    }
+    .dashboard-header {
+    text-align: center;
+    padding: 20px;
+}
+
+.dashboard-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.dashboard-header h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dashboard-header p {
+    font-size: 16px;
+    color: #555;
+    max-width: 600px;
+    margin: auto;
+}
+
+</style>
+
+<!-- Tableau Visualization Section -->
+<section class="tableau-container">
+    <div class="dashboard-header">
+        <h1>Data Dashboard</h1>
+        <h3>Overview</h3>
+        <p>
+            This dashboard provides real-time insights into Maxx Energy’s solar energy generation and efficiency.
+            It visualizes power output, energy yield, and performance across different plants.
+        </p>
+    </div>
+    
+    
+    <div class='tableauPlaceholder' id='viz1741100649213' style='position: relative'>
+        <noscript>
+            <a href='#'>
+                <img alt='Plant 1 ' src='https://public.tableau.com/static/images/Pl/Plant_Genoration_Viz/Sheet1/1_rss.png' style='border: none' />
+            </a>
+        </noscript>
+        <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+            <param name='embed_code_version' value='3' /> 
+            <param name='site_root' value='' />
+            <param name='name' value='Plant_Genoration_Viz/Sheet1' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Pl/Plant_Genoration_Viz/Sheet1/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+        </object>
+    </div>
+</section>
+
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1741100649213');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width = '100%';
+    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+<style>.tableau-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}</style>
+
+ <!-- More Information Section -->
+ <section class="more-info">
+    <div class="info-container">
+        <h2>More Information</h2>
+        <p>Learn more about energy savings, efficiency rates, and solar technology.</p>
+        <div class="info-links">
+            <a href="dashpage2.html" class="info-btn">Solar Panel Comparison</a>
+            <a href="dashpage3.html" class="info-btn">Solar Energy Facts</a>
+        </div>
+        <p>For inquiries, contact us at <a href="mailto:support@maxxenergy.com" class="contact-link">support@maxxenergy.com</a></p>
+    </div>
+</section>
+
+
+
+    <script src="dashboard.js"></script> <!-- JavaScript for charts -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const mainContent = document.querySelector(".main-content");
+            const body = document.body;
+
+            if (sidebar.classList.contains("active")) {
+                sidebar.classList.remove("active");
+                mainContent.classList.remove("shifted");
+                body.classList.remove("no-scroll");
+            } else {
+                sidebar.classList.add("active");
+                mainContent.classList.add("shifted");
+                body.classList.add("no-scroll");
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/get-profile-pic') // Adjust the endpoint to match your backend API
+                .then(response => response.json())
+                .then(data => {
+                    if (data.profile_pic) {
+                        document.getElementById("dashboard-profile-pic").src = data.profile_pic;
+                    }
+                })
+                .catch(error => console.error("Error fetching profile picture:", error));
+        });
+        </script>
+        
+    <script>
+        document.getElementById("searchBar").addEventListener("keyup", function () {
+            let filter = this.value.toLowerCase();
+            let items = document.querySelectorAll(".main-content section, .main-content .info-card, .main-content h3, .main-content h4, .main-content p");
+            
+            items.forEach(item => {
+                let text = item.innerText.toLowerCase();
+                if (text.includes(filter)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+    </script>
+    
+
+<script type="text/javascript" src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        var containerDiv = document.getElementById("tableauViz");
+        var url = "https://public.tableau.com/views/Plant_Genoration_Viz/Sheet1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link`q  "; // Replace this
+
+        var options = {
+            hideTabs: true,
+            onFirstInteractive: function () {
+                console.log("Tableau Dashboard Loaded.");
+                fetchTableauData();
+            }
+        };
+
+        var viz = new tableau.Viz(containerDiv, url, options); // Initialize Tableau
+
+        function fetchTableauData() {
+            let workbook = viz.getWorkbook();
+            let activeSheet = workbook.getActiveSheet();
+
+            // If it's a dashboard, access its worksheets
+            if (activeSheet.getSheetType() === "dashboard") {
+                let worksheets = activeSheet.getWorksheets();
+                let targetWorksheet = worksheets[0]; // Adjust to the correct worksheet
+
+                targetWorksheet.getSummaryDataAsync().then(function (data) {
+                    console.log("Tableau Data:", data);
+                    let temperature = data.getData()[0][1].value; // Adjust column index
+                    document.getElementById("temperature").innerText = temperature + "°C";
+                }).catch(error => console.error("Error fetching Tableau data:", error));
+            }
+        }
+    });
+</script>
+<!-- Include the Tableau JavaScript API -->
+<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+<style>
+  .dashboard-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Style the Tableau viz containers */
+  #tableauVizPlant5, #tableauVizPlant6 {
+    width: 100%;
+    height: 500px; /* adjust height as needed */
+    border: none;
+  }
+</style>
+</head>
+
+
+
+
+    
+</body>
+</html>
