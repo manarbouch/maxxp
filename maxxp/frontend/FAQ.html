@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maxx Energy Plant - FAQ</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
@@ -19,6 +23,62 @@
             color: #333;
             line-height: 1.6;
             overflow-y: scroll;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #1a5f7a; /* Navbar background color */
+            padding: 10px 20px; /* Padding for the navbar */
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Center items vertically */
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .nav-logo {
+            margin-right: 20px; /* Space between logo and links */
+        }
+
+        .nav-logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex; /* Use flexbox for horizontal alignment */
+            align-items: center;
+            list-style: none; /* Remove default list styling */
+            padding: 0; /* Remove padding */
+            margin:0; /* Remove margin */
+            gap: 40px;
+        }
+
+        .nav-logo {
+            margin-right: 20px;
+        }
+
+        .nav-links li {
+            margin: 90px; /* Space between each link */
+        }
+
+        .nav-links a {
+            color: white; /* Link color */
+            text-decoration: none; /* Remove underline */
+            font-weight: 500; /* Font weight */
+            transition: color 0.3s; /* Transition for hover effect */
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00; /* Hover color */
+        }
+
+        .login-signup {
+            display: flex;
+            align-items: center;
+        }
+
+        .login-signup a {
+            color: white; /* Icon color */
+            margin-left: 10px;
         }
 
         .container {
@@ -40,10 +100,9 @@
             left: 40;
             top: 50%;
             transform: translateY(-50%);
-            height:60px;
-            width:max-content;
+            height: 60px;
+            width: max-content;
         }
-
 
         .header h1 {
             width: 100%;
@@ -56,7 +115,6 @@
 
         .search-container {
             width: 100%;
-            max-width: none;
             padding: 20px;
             border: 2px solid #1a5f7a;
             border-radius: 5px;
@@ -109,8 +167,6 @@
             background-color: white; /* White background for FAQ items for contrast */
             border-radius: 5px;
             padding: 20px;
-            border-left: 5px solid #ddd; /* Default border */
-            box-shadow: 0 2px 5px rgba(81, 203, 130, 0.1);
             box-shadow: 0 2px 5px rgba(117, 194, 170, 0.1);
         }
 
@@ -146,10 +202,98 @@
             height: auto;
         }
 
+        footer {
+            background: #1a5f7a;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo img {
+            width: 140px; /* Slightly larger */
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-links li a:hover {
+            color: #ffcc00; /* Change to your accent color */
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons i {
+            font-size: 1.4rem;
+            color: #fff;
+        }
+
+        .social-icons a:hover {
+            background: #ffcc00; /* Change to your accent color */
+            transform: translateY(-3px);
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
             }
+             .nav-links {
+                flex-direction: column; /* Stack links vertically on small screens */
+                width: 100px;
+                padding: 10px 0;
+            }
+            nav { 
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links{ 
+                flex-direction: column;
+                width: 100%;
+                padding: 10px 0;
+            }
+            .nav-links li {
+                margin: 5px 0;
+            }
+
             .header {
                 flex-direction: column;
                 gap: 15px;
@@ -173,17 +317,33 @@
                 font-size: 14px;
             }
         }
+        
     </style>
 </head>
 <body>
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo" style="height: 40px;"> <!-- Logo size adjusted -->
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="https://maxxpotential.com/work-at-maxx/">Careers</a></li>
+            <li><a href="login.html"><i class="fas fa-user-circle"></i> Login</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <div class="header">
-            <img src="MAXX-Energy-Logo-1B.png" alt="Maxx Energy Logo" class="logo">
             <h1>Maxx Energy Plant FAQ</h1>
         </div>
         
         <div class="image-container">
-            <img src="Hands.png" alt="Hands raised" class="header-image">
+            <img src="images/Hands.png" alt="Hands raised" class="header-image">
         </div>
 
         <div class="search-container">
@@ -204,6 +364,27 @@
         </div>
     </div>
 
+    <footer>
+        <div class="footer-content">
+            <a href="index.html" class="footer-logo" target="_blank">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+            <ul class="footer-links">
+                <li><a href="FAQ.html" target="_blank">FAQ</a></li>
+                <li><a href="Blog.html" target="_blank">Blog</a></li>
+                <li><a href="login.html" target="_blank">Sign Up</a></li>
+                <li><a href="https://maxxpotential.com/work-at-maxx/" target="_blank">Careers</a></li>
+                <li><a href="contactus.html" target="_blank">Contact Us</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/maxx-potential/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/MaxxTechnology" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/maxxpotentialllc" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://www.youtube.com/@maxxpotential1473" target="_blank"><i class='bx bxl-youtube'></i></a>
+            </div>
+        </div>
+    </footer>
+    
     <script>
         const faqData = [
             { category: 'general', question: 'What is Maxx Energy Plant?', answer: 'Maxx Energy Plant is a state-of-the-art power generation facility that produces clean and sustainable energy for the surrounding communities.' },
