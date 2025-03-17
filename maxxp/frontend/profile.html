@@ -55,24 +55,49 @@
     <script>
         const profilePic = document.getElementById("profile-pic");
         const uploadPic = document.getElementById("upload-pic");
-
+    
+        // Load saved image from localStorage
+        document.addEventListener("DOMContentLoaded", function () {
+            const savedImage = localStorage.getItem("profileImage");
+            if (savedImage) {
+                profilePic.src = savedImage;
+            }
+        });
+    
         uploadPic.addEventListener("change", function () {
             const file = this.files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function (e) {
                     profilePic.src = e.target.result;
+    
+                    // Save image in localStorage to persist after refresh
+                    localStorage.setItem("profileImage", e.target.result);
                 };
                 reader.readAsDataURL(file);
             }
         });
-
+    
         document.getElementById("save-profile").addEventListener("click", function () {
             const name = document.getElementById("username").value;
             const bio = document.getElementById("bio").value;
+    
+            // Save name and bio in localStorage (optional)
+            localStorage.setItem("profileName", name);
+            localStorage.setItem("profileBio", bio);
+
+      
+    
             console.log("Name:", name);
             console.log("Bio:", bio);
+    
+            // Redirect to dashboard after saving
+            setTimeout(() => {
+                window.location.href = "newdash.html"; // Change "dashboard.html" to your actual dashboard
+            }, 1000);
         });
+    
     </script>
+     
 </body>
 </html>
