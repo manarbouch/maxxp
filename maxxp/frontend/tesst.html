@@ -6,8 +6,6 @@
     <title>Maxx Energy Dashboard</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <!-- Recharts for data visualization -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -348,24 +346,35 @@
                 <nav>
                     <ul class="space-y-1 px-2">
                         <li>
-                            <a href="newdash.html" class="nav-item active">
+                            <a href="#" class="nav-item active">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                                 Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="dashpage2.html" class="nav-item">
+                            <a href="#" class="nav-item">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 14h8"/><path d="M8 10h2"/><path d="M8 18h5"/><path d="M16 18h.01"/></svg>
-                                Solar Panel Comparison
+                                Analytics
                             </a>
                         </li>
                         <li>
-                            <a href="newdashp2.html" class="nav-item">
+                            <a href="#" class="nav-item">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-                                Solar Energy Facts
+                                Energy Usage
                             </a>
                         </li>
-                        
+                        <li>
+                            <a href="#" class="nav-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+                                Sustainability
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                                Schedule
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 
@@ -373,17 +382,30 @@
                     <div class="px-4 mb-2 text-xs font-medium text-sidebar-foreground/70">Account</div>
                     <nav>
                         <ul class="space-y-1 px-2">
-                           
                             <li>
-                                <a href="profile.html" class="nav-item">
+                                <a href="#" class="nav-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                                    Notifications
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-item">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                     Profile
                                 </a>
                             </li>
                             <li>
-                               
+                                <a href="#" class="nav-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    Settings
+                                </a>
                             </li>
-                            
+                            <li>
+                                <a href="#" class="nav-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                                    Alerts
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -400,22 +422,6 @@
                             <p class="text-xs text-muted-foreground">Admin</p>
                         </div>
                     </div>
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            // Update the avatar image if one is saved
-                            const avatarDiv = document.querySelector("div.avatar");
-                            const savedImage = localStorage.getItem("profileImage");
-                            if (savedImage) {
-                                avatarDiv.innerHTML = `<img src="${savedImage}" alt="Profile Image" style="width: 40px; height: 40px; border-radius: 50%;">`;
-                            }
-                            
-                            // Update the profile name if one is saved
-                            const savedName = localStorage.getItem("profileName");
-                            if (savedName) {
-                                document.querySelector("p.text-sm.font-medium").textContent = savedName;
-                            }
-                        });
-                        </script>
                     <button id="theme-toggle" class="btn btn-ghost btn-icon">
                         <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
@@ -441,12 +447,28 @@
                     </div>
                     <div class="flex items-center gap-4">
                         <div class="dropdown" id="notifications-dropdown">
-                          
+                            <button class="btn btn-ghost btn-icon relative">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                                <span class="badge absolute -right-1 -top-1 h-5 w-5 flex items-center justify-center p-0 text-xs">3</span>
+                            </button>
                             <div class="dropdown-content">
-                                <div class="p-2 font-medium border-b"></div>
+                                <div class="p-2 font-medium border-b">Notifications</div>
                                 <div class="max-h-[300px] overflow-auto">
-                                    
-                                    
+                                    <div class="p-3 hover:bg-accent">
+                                        <div class="font-medium">Energy Usage Alert</div>
+                                        <div class="text-xs text-muted-foreground">Your energy usage is 20% higher than usual</div>
+                                        <div class="text-xs text-muted-foreground">2 hours ago</div>
+                                    </div>
+                                    <div class="p-3 hover:bg-accent">
+                                        <div class="font-medium">System Update</div>
+                                        <div class="text-xs text-muted-foreground">New features available in your dashboard</div>
+                                        <div class="text-xs text-muted-foreground">Yesterday</div>
+                                    </div>
+                                    <div class="p-3 hover:bg-accent">
+                                        <div class="font-medium">Savings Goal Reached</div>
+                                        <div class="text-xs text-muted-foreground">You've reached your monthly energy savings goal!</div>
+                                        <div class="text-xs text-muted-foreground">3 days ago</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -454,19 +476,11 @@
                             <button class="avatar">
                                 <span>JD</span>
                             </button>
-                            <script>
-                                document.addEventListener("DOMContentLoaded", function() {
-                                    const avatarButton = document.querySelector("button.avatar");
-                                    const savedImage = localStorage.getItem("profileImage");
-                                    if (savedImage) {
-                                        avatarButton.innerHTML = `<img src="${savedImage}" alt="Profile Image" style="width: 40px; height: 40px; border-radius: 50%;">`;
-                                    }
-                                });
-                            </script>
                             <div class="dropdown-content">
                                 <div class="p-2 font-medium border-b">My Account</div>
-                                <div class="p-2 hover:bg-accent" onclick="window.location.href='profile.html'">Profile</div>
-                               
+                                <div class="p-2 hover:bg-accent">Profile</div>
+                                <div class="p-2 hover:bg-accent">Settings</div>
+                                <div class="p-2 hover:bg-accent">Billing</div>
                                 <div class="p-2 hover:bg-accent border-t">Log out</div>
                             </div>
                         </div>
@@ -476,63 +490,71 @@
                 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
                     <h1 class="text-2xl font-bold tracking-tight">Energy Dashboard</h1>
                     <div class="flex items-center gap-2">
-                     
-                        <!-- Button to trigger the calendar -->
-<button id="dateButton" class="btn btn-ghost border border-input relative">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
-        <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
-        <line x1="16" x2="16" y1="2" y2="6"/>
-        <line x1="8" x2="8" y1="2" y2="6"/>
-        <line x1="3" x2="21" y1="10" y2="10"/>
-    </svg>
-    <span id="dateText">Calendar</span>
-</button>
-
-<!-- Hidden input field for the date picker -->
-<input type="text" id="hiddenDateInput" class="absolute opacity-0 pointer-events-none">
-
-<!-- Include Flatpickr Library -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Get today's date and a week ahead for default selection
-        let today = new Date();
-        let nextWeek = new Date();
-        nextWeek.setDate(today.getDate() + 7);
-
-        // Format dates to "YYYY-MM-DD" for Flatpickr
-        let todayStr = today.toISOString().split("T")[0];
-        let nextWeekStr = nextWeek.toISOString().split("T")[0];
-
-        // Initialize Flatpickr on the hidden input field
-        const datePicker = flatpickr("#hiddenDateInput", {
-            mode: "range",
-            dateFormat: "M d, Y",
-            defaultDate: [todayStr, nextWeekStr], // Always up-to-date
-            appendTo: document.body, // Ensures correct positioning
-            position: "below", // Opens just below the button
-            onClose: function(selectedDates, dateStr) {
-                if (dateStr) {
-                    document.getElementById("dateText").innerText = dateStr;
-                }
-            }
-        });
-
-        // When button is clicked, open the date picker
-        document.getElementById("dateButton").addEventListener("click", function() {
-            datePicker.open();
-        });
-    });
-</script>
-
-
+                        <select class="rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background" id="date-range">
+                            <option value="today">Today</option>
+                            <option value="yesterday">Yesterday</option>
+                            <option value="7days" selected>Last 7 days</option>
+                            <option value="30days">Last 30 days</option>
+                            <option value="90days">Last 90 days</option>
+                        </select>
+                        <button class="btn btn-ghost border border-input">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            Mar 1 - Mar 7, 2025
+                        </button>
                     </div>
                 </div>
                 
-                
-                
+                <!-- Energy Overview Cards -->
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6">
+                    <div class="card p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="text-sm font-medium">Energy Usage</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <div class="text-2xl font-bold">42.8 kWh</div>
+                        <div class="flex items-center text-xs">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 text-emerald-500"><path d="m18 15-6-6-6 6"/></svg>
+                            <span class="text-emerald-500">-12%</span>
+                            <span class="ml-1 text-muted-foreground">from last month</span>
+                        </div>
+                    </div>
+                    <div class="card p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="text-sm font-medium">Cost</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <div class="text-2xl font-bold">$86.42</div>
+                        <div class="flex items-center text-xs">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 text-emerald-500"><path d="m18 15-6-6-6 6"/></svg>
+                            <span class="text-emerald-500">-8%</span>
+                            <span class="ml-1 text-muted-foreground">from last month</span>
+                        </div>
+                    </div>
+                    <div class="card p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="text-sm font-medium">Carbon Offset</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-500"><path d="M12 2L2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+                        </div>
+                        <div class="text-2xl font-bold">128 kg</div>
+                        <div class="flex items-center text-xs">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 text-emerald-500"><path d="m6 9 6 6 6-6"/></svg>
+                            <span class="text-emerald-500">+24%</span>
+                            <span class="ml-1 text-muted-foreground">from last month</span>
+                        </div>
+                    </div>
+                    <div class="card p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="text-sm font-medium">Efficiency</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 14h8"/><path d="M8 10h2"/><path d="M8 18h5"/><path d="M16 18h.01"/></svg>
+                        </div>
+                        <div class="text-2xl font-bold">94%</div>
+                        <div class="flex items-center text-xs">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 text-emerald-500"><path d="m6 9 6 6 6-6"/></svg>
+                            <span class="text-emerald-500">+5%</span>
+                            <span class="ml-1 text-muted-foreground">from last month</span>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Weather & Metrics -->
                 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
@@ -542,15 +564,6 @@
                                 <h3 class="text-lg font-medium">Weather & Solar Conditions</h3>
                                 <span class="text-sm text-muted-foreground">Live Data</span>
                             </div>
-                            
-                          
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center p-4 mt-6">
-        <p>&copy; 2025 Data Dashboard. All rights reserved.</p>
-    </footer>
-</body>
-</html>
                             
                             <div class="grid gap-4 md:grid-cols-2">
                                 <div class="flex items-center gap-4">
@@ -603,41 +616,6 @@
                             </div>
                         </div>
                     </div>
-                    <script>
-                        const apiKey = "c15559a110e64d6ae5779cced13242d2"; // OpenWeather API key
-                        const city = "New York"; // Change to your preferred city
-                    
-                        async function fetchWeather() {
-                            try {
-                                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`);
-                                const data = await response.json();
-                    
-                                if (data.cod !== 200) {
-                                    console.error("Error fetching weather:", data.message);
-                                    return;
-                                }
-                    
-                                // Update basic weather info
-                                document.getElementById("temperature").innerText = `${Math.round(data.main.temp)}°F`;
-                                document.getElementById("humidity").innerText = `${data.main.humidity}%`;
-                                document.getElementById("wind-speed").innerText = `${data.wind.speed} mph`;
-                                document.querySelector(".text-muted-foreground").innerText = data.weather[0].description;
-                    
-                                // Calculate solar intensity based on cloudiness (rough estimate)
-                                const cloudiness = data.clouds.all; // Cloudiness in percentage (0 = clear, 100 = overcast)
-                                const solarIntensity = Math.max(0, 100 - cloudiness); // Higher cloudiness reduces solar energy
-                    
-                                // Update UI for solar intensity
-                                document.getElementById("solar-intensity").innerText = `${solarIntensity}%`;
-                                document.querySelector(".solar-intensity-value").style.width = `${solarIntensity}%`;
-                            } catch (error) {
-                                console.error("Failed to fetch weather data:", error);
-                            }
-                        }
-                    
-                        document.addEventListener("DOMContentLoaded", fetchWeather);
-                    </script>
-                    
                     
                     <div class="card">
                         <div class="p-6">
@@ -683,7 +661,8 @@
                 <div class="mb-6">
                     <div class="tabs mb-4" id="chart-tabs">
                         <div class="tab active" data-tab="charts">Charts</div>
-                        
+                        <div class="tab" data-tab="consumption">Consumption</div>
+                        <div class="tab" data-tab="savings">Savings</div>
                     </div>
                     
                     <div class="tab-content" id="charts-content">
@@ -693,127 +672,41 @@
                                     <div class="flex flex-row items-center justify-between pb-2">
                                         <div>
                                             <h3 class="text-lg font-medium">Energy Consumption</h3>
-                                            <p class="text-sm text-muted-foreground">monthly energy usage</p>
+                                            <p class="text-sm text-muted-foreground">Daily energy usage</p>
                                         </div>
                                         <div class="tabs" id="chart-view-tabs">
-                                            
+                                            <div class="tab active" data-view="daily">Daily</div>
+                                            <div class="tab" data-view="weekly">Weekly</div>
+                                            <div class="tab" data-view="monthly">Monthly</div>
                                         </div>
-                                        
                                     </div>
-                                    <div class="h-[300px] pt-4" id="energy-consumption-chart"><!-- Data Visualization for Plant 1 -->
-                                        <section id="chart" class="container mx-auto mt-6 p-6 bg-white shadow-md rounded-lg">
-                                            
-                                            <canvas id="energyChart" style="max-height: 300px;"></canvas>
-                                        </section>
-                                        
-                                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                        <script>
-                                            let chartType = 'line';
-                                            let chart;
-                                            const ctx = document.getElementById("energyChart").getContext("2d");
-                                            const chartData = {
-                                                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                                                datasets: [{
-                                                    label: "Plant 1 Energy (MW)",
-                                                    data: [400, 450, 420, 460, 480, 500, 520, 510, 530, 540, 550, 570],
-                                                    backgroundColor: "rgba(75, 192, 192, 0.2)",
-                                                    borderColor: "rgba(75, 192, 192, 1)",
-                                                    borderWidth: 2,
-                                                    fill: true
-                                                }]
-                                            };
-                                        
-                                            function createChart(type) {
-                                                if (chart) chart.destroy();
-                                                chart = new Chart(ctx, { type, data: chartData, options: { responsive: true, maintainAspectRatio: false } });
-                                            }
-                                        
-                                            function toggleChart() {
-                                                chartType = chartType === 'line' ? 'bar' : 'line';
-                                                createChart(chartType);
-                                            }
-                                        
-                                            document.addEventListener("DOMContentLoaded", () => createChart(chartType));
-                                        </script>
-                                        
-                                        </section></div>
+                                    <div class="h-[300px] pt-4" id="energy-consumption-chart"></div>
                                 </div>
                             </div>
                             
-                            
                             <div class="card">
-                                <div class="mt-4 p-4 bg-white rounded-lg shadow-md">
-                                    <h2 class="text-xl font-semibold text-gray-800">Key Insights</h2>
-                                    <p class="mt-2 text-gray-600">
-                                        Energy consumption started at around <span class="font-semibold text-blue-600">400 MW</span> in January and increased gradually over the months, 
-                                        peaking at approximately <span class="font-semibold text-blue-600">580 MW</span> in December.
-                                    </p>
-                                    <p class="mt-2 text-gray-600">
-                                        The most significant rise occurred between <span class="font-semibold text-blue-600">May and July</span>, indicating higher energy demand during this period.
-                                    </p>
-                                    <p class="mt-2 text-gray-600">
-                                        A slight dip was observed in <span class="font-semibold text-blue-600">March</span>, followed by a steady increase in usage.
-                                    </p>
+                                <div class="p-4">
+                                    <h3 class="text-lg font-medium">Energy Distribution</h3>
+                                    <p class="text-sm text-muted-foreground">Source breakdown</p>
+                                    <div class="h-[300px]" id="energy-distribution-chart"></div>
                                 </div>
-                                
-                                
                             </div>
                             
                             <div class="card lg:col-span-2">
                                 <div class="p-4">
                                     <h3 class="text-lg font-medium">Time of Day Usage</h3>
-                                    <p class="text-sm text-muted-foreground">Energy consumption by month</p>
-                                    
-                                   </div>
-                                   <div class='tableauPlaceholder' id='viz1741873485191' style='position: relative'>
-                                    <noscript>
-                                        <a href='#'>
-                                            <img alt='Dashboard 1' src='https://public.tableau.com/static/images/Pl/Plant_Genoration_Viz/Dashboard1/1_rss.png' style='border: none' />
-                                        </a>
-                                    </noscript>
-                                    <object class='tableauViz' style='display:none;'>
-                                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                                        <param name='embed_code_version' value='3' />
-                                        <param name='site_root' value='' />
-                                        <param name='name' value='Plant_Genoration_Viz/Dashboard1' />
-                                        <param name='tabs' value='no' />
-                                        <param name='toolbar' value='yes' />
-                                        <param name='static_image' value='https://public.tableau.com/static/images/Pl/Plant_Genoration_Viz/Dashboard1/1.png' />
-                                        <param name='animate_transition' value='yes' />
-                                        <param name='display_static_image' value='yes' />
-                                        <param name='display_spinner' value='yes' />
-                                        <param name='display_overlay' value='yes' />
-                                        <param name='display_count' value='yes' />
-                                        <param name='language' value='en-US' />
-                                        <param name='filter' value='publish=yes' />
-                                        <param name='ignore_sticky_session' value='yes' />
-                                    </object>
+                                    <p class="text-sm text-muted-foreground">Energy consumption by hour</p>
+                                    <div class="h-[300px]" id="time-of-day-chart"></div>
                                 </div>
-                                
-                                <script type='text/javascript'>
-                                    var divElement = document.getElementById('viz1741873485191');
-                                    var vizElement = divElement.getElementsByTagName('object')[0];
-                                
-                                    if (divElement.offsetWidth > 800) { 
-                                        vizElement.style.width = '100%';
-                                        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                                    } else if (divElement.offsetWidth > 500) { 
-                                        vizElement.style.width = '100%';
-                                        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                                    } else { 
-                                        vizElement.style.width = '100%';
-                                        vizElement.style.height = '877px';
-                                    } 
-                                
-                                    var scriptElement = document.createElement('script');
-                                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                                </script>
-                                </div>
-
                             </div>
-       
                             
+                            <div class="card">
+                                <div class="p-4">
+                                    <h3 class="text-lg font-medium">Efficiency Trend</h3>
+                                    <p class="text-sm text-muted-foreground">System performance</p>
+                                    <div class="h-[300px]" id="efficiency-chart"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1006,14 +899,13 @@
             charts.forEach(chart => {
                 chart.innerHTML = `<div class="flex items-center justify-center h-full">
                     <div class="text-center">
-                        <p class="text-muted-foreground"></p>
-                        <p class="text-xs text-muted-foreground mt-2"></p>
+                        <p class="text-muted-foreground">Chart visualization would appear here</p>
+                        <p class="text-xs text-muted-foreground mt-2">Using Recharts or Chart.js</p>
                     </div>
                 </div>`;
             });
-        }s
-
-
+        }
+        
         // Initialize the page
         document.addEventListener('DOMContentLoaded', () => {
             initCharts();
@@ -1023,6 +915,5 @@
             setInterval(updateLiveData, 5000);
         });
     </script>
-    
 </body>
 </html>

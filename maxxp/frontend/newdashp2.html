@@ -360,7 +360,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="dashpage3.html" class="nav-item">
+                            <a href="newdashp2.html" class="nav-item">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
                                 Solar Energy Facts
                             </a>
@@ -373,24 +373,14 @@
                     <div class="px-4 mb-2 text-xs font-medium text-sidebar-foreground/70">Account</div>
                     <nav>
                         <ul class="space-y-1 px-2">
-                            <li>
-                                <a href="#" class="nav-item">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
-                                    Notifications
-                                </a>
-                            </li>
+                          
                             <li>
                                 <a href="profile.html" class="nav-item">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                     Profile
                                 </a>
                             </li>
-                            <li>
-                                <a href="#" class="nav-item">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-                                    Settings
-                                </a>
-                            </li>
+                           
                             
                         </ul>
                     </nav>
@@ -449,28 +439,11 @@
                     </div>
                     <div class="flex items-center gap-4">
                         <div class="dropdown" id="notifications-dropdown">
-                            <button class="btn btn-ghost btn-icon relative">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
-                                <span class="badge absolute -right-1 -top-1 h-5 w-5 flex items-center justify-center p-0 text-xs">3</span>
-                            </button>
+                            
                             <div class="dropdown-content">
                                 <div class="p-2 font-medium border-b">Notifications</div>
                                 <div class="max-h-[300px] overflow-auto">
-                                    <div class="p-3 hover:bg-accent">
-                                        <div class="font-medium">Energy Usage Alert</div>
-                                        <div class="text-xs text-muted-foreground">Your energy usage is 20% higher than usual</div>
-                                        <div class="text-xs text-muted-foreground">2 hours ago</div>
-                                    </div>
-                                    <div class="p-3 hover:bg-accent">
-                                        <div class="font-medium">System Update</div>
-                                        <div class="text-xs text-muted-foreground">New features available in your dashboard</div>
-                                        <div class="text-xs text-muted-foreground">Yesterday</div>
-                                    </div>
-                                    <div class="p-3 hover:bg-accent">
-                                        <div class="font-medium">Savings Goal Reached</div>
-                                        <div class="text-xs text-muted-foreground">You've reached your monthly energy savings goal!</div>
-                                        <div class="text-xs text-muted-foreground">3 days ago</div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -562,6 +535,207 @@
     </div>
 
    
-    
+    <!-- JavaScript -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+        
+        // Update icon visibility
+        updateThemeIcon(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcon(isDark ? 'dark' : 'light');
+        });
+        
+        function updateThemeIcon(theme) {
+            sunIcon.classList.toggle('hidden', theme === 'light');
+            moonIcon.classList.toggle('hidden', theme === 'dark');
+        }
+        
+        // Mobile sidebar toggle
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+        
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('sidebar-open');
+        });
+        
+        // Dropdown toggles
+        const dropdowns = document.querySelectorAll('.dropdown');
+        
+        dropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('button');
+            
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('open');
+                
+                // Close other dropdowns
+                dropdowns.forEach(other => {
+                    if (other !== dropdown) {
+                        other.classList.remove('open');
+                    }
+                });
+            });
+        });
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('open');
+            });
+        });
+        
+        // Tab switching
+        const chartTabs = document.querySelectorAll('#chart-tabs .tab');
+        const chartViewTabs = document.querySelectorAll('#chart-view-tabs .tab');
+        
+        chartTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                chartTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                // Here you would update the chart content based on the selected tab
+            });
+        });
+        
+        chartViewTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                chartViewTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                // Here you would update the chart view based on the selected tab
+            });
+        });
+        
+        // Simulate live data updates
+        function updateLiveData() {
+            // Update temperature
+            const temperature = document.getElementById('temperature');
+            let temp = parseFloat(temperature.textContent);
+            temp += (Math.random() > 0.5 ? 1 : -1) * Math.random();
+            temperature.textContent = `${Math.round(temp)}°F`;
+            
+            // Update humidity
+            const humidity = document.getElementById('humidity');
+            let humidityValue = parseFloat(humidity.textContent);
+            humidityValue = Math.max(30, Math.min(90, humidityValue + (Math.random() > 0.5 ? 2 : -2) * Math.random()));
+            humidity.textContent = `${Math.round(humidityValue)}%`;
+            document.querySelector('.flex items-center justify-between:nth-child(1) + div .bg-rose-500').style.width = `${humidityValue}%`;
+            
+            // Update wind speed
+            const windSpeed = document.getElementById('wind-speed');
+            let windValue = parseFloat(windSpeed.textContent);
+            windValue = Math.max(0, Math.min(15, windValue + (Math.random() > 0.5 ? 0.5 : -0.5) * Math.random()));
+            windSpeed.textContent = `${windValue.toFixed(1)} mph`;
+            document.querySelector('.flex items-center justify-between:nth-child(3) + div .bg-blue-500').style.width = `${(windValue / 15) * 100}%`;
+            
+            // Update solar intensity
+            const solarIntensity = document.getElementById('solar-intensity');
+            let solarValue = parseFloat(solarIntensity.textContent);
+            solarValue = Math.max(0, Math.min(100, solarValue + (Math.random() > 0.5 ? 1 : -1) * Math.random()));
+            solarIntensity.textContent = `${Math.round(solarValue)}%`;
+            document.querySelector('.solar-intensity-value').style.width = `${solarValue}%`;
+            
+            // Update recommendation text
+            const recommendationText = document.querySelector('.mt-2.text-xs.text-muted-foreground');
+            if (solarValue > 70) {
+                recommendationText.textContent = 'Current solar energy production is optimal';
+            } else if (solarValue > 40) {
+                recommendationText.textContent = 'Current solar energy production is moderate';
+            } else {
+                recommendationText.textContent = 'Current solar energy production is low';
+            }
+            
+            // Update energy metrics
+            updateEnergyMetrics();
+        }
+        
+        function updateEnergyMetrics() {
+            // Update energy saving
+            const energySavingText = document.getElementById('energy-saving-text');
+            let energySaving = parseFloat(energySavingText.textContent);
+            energySaving = Math.max(0, Math.min(100, energySaving + (Math.random() > 0.5 ? 1 : -1) * Math.random() * 2));
+            energySavingText.textContent = `${Math.round(energySaving)}%`;
+            
+            // Update the circle
+            const energySavingCircle = document.querySelector('#energy-saving-circle .progress-circle-value');
+            const circumference = 2 * Math.PI * 54;
+            const offset = circumference - (energySaving / 100) * circumference;
+            energySavingCircle.style.strokeDashoffset = offset;
+            
+            // Update color based on value
+            if (energySaving < 30) {
+                energySavingCircle.style.stroke = '#ef4444';
+            } else if (energySaving < 70) {
+                energySavingCircle.style.stroke = '#f59e0b';
+            } else {
+                energySavingCircle.style.stroke = '#10b981';
+            }
+            
+            // Update efficiency rating
+            const efficiencyText = document.getElementById('efficiency-text');
+            let efficiency = parseFloat(efficiencyText.textContent);
+            efficiency = Math.max(0, Math.min(100, efficiency + (Math.random() > 0.5 ? 0.5 : -0.5) * Math.random()));
+            efficiencyText.textContent = `${Math.round(efficiency)}%`;
+            
+            // Update the circle
+            const efficiencyCircle = document.querySelector('#efficiency-circle .progress-circle-value');
+            const efficiencyOffset = circumference - (efficiency / 100) * circumference;
+            efficiencyCircle.style.strokeDashoffset = efficiencyOffset;
+            
+            // Update color based on value
+            if (efficiency < 30) {
+                efficiencyCircle.style.stroke = '#ef4444';
+            } else if (efficiency < 70) {
+                efficiencyCircle.style.stroke = '#f59e0b';
+            } else {
+                efficiencyCircle.style.stroke = '#10b981';
+            }
+            
+            // Update recommendation
+            const recommendation = document.querySelector('.mt-4.rounded-md.bg-muted p.mt-1.text-xs.text-muted-foreground');
+            if (energySaving < 50) {
+                recommendation.textContent = 'Consider adjusting your energy usage patterns to improve savings.';
+            } else {
+                recommendation.textContent = 'Your energy saving is on track. Keep up the good work!';
+            }
+        }
+        
+        // Initialize charts
+        function initCharts() {
+            // This would be where you initialize the charts using a charting library
+            // For this example, we'll just show placeholders
+            const charts = document.querySelectorAll('[id$="-chart"]');
+            charts.forEach(chart => {
+                chart.innerHTML = `<div class="flex items-center justify-center h-full">
+                    <div class="text-center">
+                        <p class="text-muted-foreground"></p>
+                        <p class="text-xs text-muted-foreground mt-2"></p>
+                    </div>
+                </div>`;
+            });
+        }s
+
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            initCharts();
+            updateLiveData();
+            
+            // Set up interval for live data updates
+            setInterval(updateLiveData, 5000);
+        });
+    </script>
 </body>
 </html>
